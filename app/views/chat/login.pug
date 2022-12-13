@@ -1,0 +1,53 @@
+extends layout/layout.pug
+
+block content
+    div(class="sign-page")
+        div(class="container")
+            div(class="row sign-content")
+                div(class="col-12")
+                    div(class="sign-header")
+                        img(src="images/avatars/boy_6.png" class="logo" alt="boy")
+                        h1 Welcome back
+                        p are you ready to chat
+
+                    form(action="" method="POST")
+
+                        div(class="form-group")
+                            label(for="name") Name
+                            input(type="text" placeholder="enter your name" name="name" class="form-control" pattern="[a-zA-Z0-9_-]{4,10}" maxLength="20" required)
+                            input(type="hidden" name="avatar" class="avatar-input" value="boy_6")
+
+                        div(class="form-group")
+                            label(for="avatar")
+                            button(type="button" class="btn btn-light btn-block" id="avatar" data-toggle="modal" data-target="#exampleModal") Choose Your Avatar
+
+                        div(class="form-group")
+                            button(type="submit" class="btn btn-success btn-block") Enter Chat Room
+
+
+    // Avatars Modal
+    div(class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+        div(class="modal-dialog" role="document")
+            div(class="modal-content")
+                div(class="modal-header") Choose avatar
+
+                div(class="modal-body text-center")
+                    img(src="images/avatars/boy_1.png" alt="avatar-image" class="avatar-choose" data-avatar="boy_1" data-dismiss="modal")
+                    img(src="images/avatars/boy_3.png" alt="avatar-image" class="avatar-choose" data-avatar="boy_3" data-dismiss="modal")
+                    img(src="images/avatars/boy_4.png" alt="avatar-image" class="avatar-choose" data-avatar="boy_4" data-dismiss="modal")
+                    img(src="images/avatars/boy_5.png" alt="avatar-image" class="avatar-choose" data-avatar="boy_5" data-dismiss="modal")
+                    img(src="images/avatars/boy_6.png" alt="avatar-image" class="avatar-choose" data-avatar="boy_6" data-dismiss="modal")
+                    img(src="images/avatars/boy_7.png" alt="avatar-image" class="avatar-choose" data-avatar="boy_7" data-dismiss="modal")
+                    img(src="images/avatars/boy_8.png" alt="avatar-image" class="avatar-choose" data-avatar="boy_8" data-dismiss="modal")
+                    img(src="images/avatars/boy_9.png" alt="avatar-image" class="avatar-choose" data-avatar="boy_9" data-dismiss="modal")
+
+                    img(src="images/avatars/girl_1.png" alt="avatar-image" class="avatar-choose" data-avatar="girl_1" data-dismiss="modal")
+                    img(src="images/avatars/girl_2.png" alt="avatar-image" class="avatar-choose" data-avatar="girl_2" data-dismiss="modal")
+                    img(src="images/avatars/girl_3.png" alt="avatar-image" class="avatar-choose" data-avatar="girl_3" data-dismiss="modal")
+                    img(src="images/avatars/girl_4.png" alt="avatar-image" class="avatar-choose" data-avatar="girl_4" data-dismiss="modal")
+                    img(src="images/avatars/girl_5.png" alt="avatar-image" class="avatar-choose" data-avatar="girl_5" data-dismiss="modal")
+                    img(src="images/avatars/girl_6.png" alt="avatar-image" class="avatar-choose" data-avatar="girl_6" data-dismiss="modal")
+                    img(src="images/avatars/girl_7.png" alt="avatar-image" class="avatar-choose" data-avatar="girl_7" data-dismiss="modal")
+                    img(src="images/avatars/girl_8.png" alt="avatar-image" class="avatar-choose" data-avatar="girl_8" data-dismiss="modal")
+                    img(src="images/avatars/girl_9.png" alt="avatar-image" class="avatar-choose" data-avatar="girl_9" data-dismiss="modal")
+                    img(src="images/avatars/girl_10.png" alt="avatar-image" class="avatar-choose" data-avatar="girl_10" data-dismiss="modal")

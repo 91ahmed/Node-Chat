@@ -1,0 +1,37 @@
+extends  ../layout/layout.pug
+
+block content
+    div(class="sign-page")
+        div(class="container")
+            div(class="row sign-content")
+                div(class="col-12")
+                    div(class="sign-header")
+                        h1 Sign Up
+                        p It's free and always will be
+
+                    form(action="register" method="POST")
+
+                        div(class="form-group")
+                            label(for="username") Username
+                            input(type="text" placeholder="Username" name="username" class="form-control")
+
+                        div(class="form-group")
+                            label(for="email") E-mail
+                            input(type="email" placeholder="E-mail" name="email" class="form-control")
+
+                        div(class="form-group")
+                            label(for="password") Password
+                            input(type="password" placeholder="xxxxxxxx" name="password" class="form-control")
+
+                        div(class="form-group")
+                            label(for="confirm-password") Confirm Password
+                            input(type="password" placeholder="xxxxxxxx" name="confirmPassword" class="form-control")
+
+                        div(class="form-group")
+                            button(type="submit" class="btn btn-success btn-block") Sign up
+
+                        div(class="sign-footer")
+                            a(href="login") Already have an account?
+
+                    
+

@@ -1,0 +1,234 @@
+html, body{
+    height:100%;
+}
+body{
+    /*background-color: #6270F8;*/
+    background-color: #1fd1f9;
+    background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);    
+}
+body,h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    resize: none;
+}
+.sign-page{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-color: #6270F8;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.sign-content{
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+.sign-header{
+    padding: 50px 0;
+    text-align: center;
+    color: #FFF;
+}
+.sign-footer a{
+    display: block;
+    text-align: center;
+    color: #BEC3F7;
+    font-size: 13px;
+}
+.sign-header h1{
+    position: relative;
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+.sign-header .logo{
+    /*position: absolute;*/
+    margin: auto;
+    width: 85px;
+}
+.sign-header p{
+    font-size: 14px;
+}
+.sign-page label{
+    color: #FFF;
+}
+.sign-page .form-control,
+.sign-page button{
+    border-radius: 10px;
+}
+.sign-page .form-control:hover,
+.sign-page .form-control:focus,
+.sign-page .form-control{
+    padding: 10px;
+    height: auto;
+    outline: none;
+    border: 0;
+    box-shadow: none;
+}
+.sign-page button:hover,
+.sign-page button:focus,
+.sign-page button{
+    padding: 15px 10px !important;
+    background-color: #30E391 !important;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    outline: none;
+    border: 0;
+    box-shadow: none;
+}
+.avatar-choose{
+    display: inline-block;
+    width: 100px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+/* Navbar */
+.fixed-navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 999;
+}
+.user-avatar{
+    float:left;
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    background-repeat: no-repeat;
+    background-position:center top;
+    background-size: cover;
+}
+.user-name{
+    float: left;
+    font-size: 15px;
+    text-transform: capitalize;
+    margin: 9px 10px;
+}
+
+.chat-content{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 125px;
+    max-width: 700px;
+    height: 100vh;
+    margin: auto;
+    background-color: #FFF;
+    border-right: 1px solid #e2e1e1;
+    border-left: 1px solid #e2e1e1;
+}
+.chat-box{
+    margin-bottom: 20px;
+}
+.chat-box-container{
+    position: absolute;
+    top:230px;
+    left:0;
+    right:0;
+    bottom:0;
+    padding: 20px;
+    overflow: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.text-box{
+    max-width: 700px;
+    margin: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 0;
+    background-color: #fff;
+    /*border-top: 1px solid #DDD;*/
+    z-index:99999999;
+}
+.text-box textarea:hover,
+.text-box textarea:focus,
+.text-box textarea {
+    height:90px;
+    padding:20px;
+    box-shadow: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #e5e6e6;
+}
+.text-box button{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    border-radius: 50%;
+    z-index: 10;
+    background-color: #3caffa;
+    border: 0;
+}
+.chat-title{
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #626263;
+}
+.chat-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /*background-image: url('../images/avatars/boy_5.png');*/
+    background-color: #f0f2f5;
+    background-repeat: no-repeat;
+    background-position:center top;
+    background-size: cover;
+    margin-right: 10px;
+    border: 1px solid #e2e1e1;
+    float: left;
+}
+.chat-text{
+    font-size: 13px;
+    color: #565656;
+}
+.chat-content .card-body{
+    width: auto;
+    padding: 10px;
+    background-color: #f0f2f5;
+    border-radius: 10px;
+    border:1px solid #e2e1e1;
+}
+.chat-content .card{
+    border: 1px solid rgb(119 119 119 / 13%);
+    border-radius: 10px;
+    max-width: 400px;
+    float: left;
+}
+.currentDateTime{
+    display: block;
+    font-size: 11px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 77px;
+    color: #959ba0; 
+}
+
+@media screen and (max-width: 500px) {
+    .chat-content .card{
+        max-width:200px;
+    }
+}
+
+@media screen and (max-width: 772px){
+    .sign-header h1{
+        font-size: 30px;
+    }
+}

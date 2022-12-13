@@ -1,0 +1,54 @@
+extends layout/layout.pug
+
+block content
+    // Navbar
+    div(class="fixed-navbar")
+        nav(class="navbar navbar-expand-lg navbar-dark bg-dark")
+            a(class="navbar-brand" href="javascript:{}")
+                div(class="user-avatar")
+                p(class="user-name")
+            button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+                span(class="navbar-toggler-icon")
+
+            div(class="collapse navbar-collapse" id="navbarSupportedContent")
+                ul(class="navbar-nav mr-auto")
+                    li(class="nav-item active")
+                        a(class="nav-link" href="logout") 
+                            i(class="fas fa-sign-out-alt") &nbsp;
+                            | Logout
+
+    div(class="chat")
+        div(class="container p-0")
+            div(class="chat-content")
+
+                div(class="chat-box-container")
+                    // Chat messages here
+                    div(class="row chat-box")
+                        div(class="col-12")
+                            div(class="chat-image" style="background-image:url(../images/avatars/boy_2.png);")
+                            div(class="card")
+                                div(class="card-body")
+                                    h5(class="card-title chat-title") Ahmed Hassan &nbsp;
+                                        small
+                                            | (owner)
+                                    p(class="card-text chat-text")
+                                        | Hello!
+                                        span(class="welcome-user")
+                                        | &nbsp; ❤
+                                        br
+                                        | welcome to my chat room
+                        small(class="currentDateTime")
+                            | 1/20/2021, 3:56:19 AM
+
+                // Message Form
+                div(class="text-box")
+                    form(action="/chat/send" method="POST" class="chat-form")
+                        div(class="row m-0 p-2")
+                            div(class="col-10")
+                                textarea(placeholder="Message" name="message" class="form-control message")
+                            div(class="col-2")
+                                button(type="submit" class="btn btn-info")
+                                    i(class="fas fa-paper-plane") 
+
+    audio(controls hidden id="chat-audio")
+        source(src="audio/ringtone.mp3" type="audio/mpeg")

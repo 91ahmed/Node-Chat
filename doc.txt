@@ -1,0 +1,103 @@
+**************************************
+DATABASE MODEL (mysql - postgresql)
+**************************************
+
+UPDATE DATA
+=================
+new Mysql('users').update({
+	'id': '2',
+	'name': 'osama'
+}, {'id': '1'});
+
+INSERT DATA
+=================
+[MySQL]
+new Mysql('users').insert({
+	'id': '1',
+	'username': 'ahmed'
+});
+
+[PostgreSQL]
+new PostgreSql('users').insert({
+	'id': '5',
+	'name': 'tamer'
+});
+
+DELETE FROM TABLE
+=================
+[MySQL]
+new Mysql('users').delete({'id':'2'})
+new Mysql().customQuery('DELETE FROM users WHERE id IN(8,10)')
+
+[PostgreSQL]
+new PostgreSql('users').delete({'id':'2'})
+new PostgreSql().customQuery('DELETE FROM users WHERE id IN(8,10)')
+
+CUSTOM QUERY
+=================
+[MySQL]
+var users = new Mysql().customQuery('SELECT * FROM users').get()
+
+[PostgreSQL]
+var users = new PostgreSql().customQuery('SELECT * FROM users').get()
+
+PAGINATION
+=============
+[MySQL]
+var users = new Mysql('users').select('name, id').paginate(req, 5)
+
+[PostgreSQL]
+var users = new PostgreSql('users').select('name, id').paginate(req, 5)
+
+
+**************************************
+MONGODB
+**************************************
+
+CREATE COLLECTION
+=================
+new Mongo().database('databaseName')
+		   .collection('collectionName')
+		   .collectionCreate();
+
+DROP COLLECTION
+===============
+new Mongo().database('databaseName')
+		   .collection('collectionName')
+		   .collectionDrop();
+
+INSERT ONE
+==========
+new Mongo().database('databaseName')
+	       .collection('collectionName')
+	       .insertOneData({
+	       		'id': 1,
+	       		'name': 'ahmed'
+	       	});
+
+INSERT MANY
+===========
+new Mongo().database('databaseName')
+	       .collection('collectionName')
+	       .insertManyData([
+	       		{'id': 2, 'name': 'muhammed'},
+	       		{'id': 3, 'name': 'nadia'}
+	       	]);
+
+FIND ONE DATA
+=============
+new Mongo().database('databaseName')
+		   .collection('collectionName')
+		   .findOneData();
+
+FIND ALL DATA
+==============
+new Mongo().database('databaseName')
+		   .collection('collectionName')
+		   .findAllData();
+
+FIND SOME FIELDS
+================
+new Mongo().database('databaseName')
+		   .collection('collectionName')
+		   .findSomeFields({ _id: 0, name: 1, email: 1 });

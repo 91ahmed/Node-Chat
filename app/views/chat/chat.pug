@@ -1,0 +1,9 @@
+each val in data
+    // chat text box
+    div(class="row chat-box")
+        div(class="col-12")
+            div(class="chat-image")
+            div(class="card")
+                div(class="card-body")
+                    h5(class="card-title chat-title")= val.name
+                    p(class="card-text chat-text")= val.message
