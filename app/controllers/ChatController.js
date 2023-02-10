@@ -2,6 +2,7 @@ const Mysql      = require('../../lib/database/mysql')
 const PostgreSql = require('../../lib/database/postgresql')
 const Mongo      = require('../../lib/database/mongodb')
 const Validator  = require('../../lib/validator/validator')
+const helpers    = require('../../public/js/helpers')
 const axios      = require('axios')
 
 exports.index = (req, res) =>
@@ -46,15 +47,16 @@ exports.loginRequest = (req, res) =>
 
 	if (valid.isValid()) {
 		if (name !== '' || avatar !== '') {
+			res.cookie('id', helpers.randomChar(15))
 			res.cookie('name', name)
 			res.cookie('avatar', avatar)
-			req.session.logged = 'logged';
-			req.session.name = name;
-			req.session.avatar = avatar;
-			res.redirect('/');
+			req.session.logged = 'logged'
+			req.session.name = name
+			req.session.avatar = avatar
+			res.redirect('/')
 		}
 	} else {
-		res.redirect('/login');
+		res.redirect('/login')
 	}
 }
 
@@ -63,8 +65,6 @@ exports.logout = (req, res) =>
 	req.session.destroy();
 	res.redirect('/login');
 }
-
-
 
 /*
 exports.chat = (req, res) => 

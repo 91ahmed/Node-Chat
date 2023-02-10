@@ -31,7 +31,7 @@ $(function(){
         
         if (!message == '') {
             // Prepend message
-            prependMessage(getCookie('avatar'), getCookie('name')+' <small>(you)</small> ', message);
+            prependMessage(getCookie('avatar'), getCookie('name')+' <small>(you)</small> ', message, 'client');
             // Send data to the server
             socket.emit('chat-message', {'message':message, 'name': getCookie('name'), 'avatar': getCookie('avatar')});
             // Clear textarea
@@ -45,7 +45,7 @@ $(function(){
 $(function(){
     var imageUrl = 'images/avatars/'+getCookie('avatar')+'.png';
 
-    $('.user-name').html('Welcome, '+getCookie('name'));
+    $('.user-name').html('<b style="font-weight: 500;">Hello</b>, '+getCookie('name'));
     $('.welcome-user').html(" "+getCookie('name')+"");
     $('.user-avatar').css('background-image', 'url(' + imageUrl + ')');
 });
@@ -56,11 +56,11 @@ socket.on('send-data', data => {
     playChatRingtone();
 });
 
-function prependMessage (avatar, title, message)
+function prependMessage (avatar, title, message, el_class = null)
 {
     $(function(){
         var currentDateTime = new Date().toLocaleString();
-        $('.chat-box-container').prepend('<div class="row chat-box wow bounceInUp"><div class="col-12"><div class="chat-image" style="background-image:url('+"../images/avatars/"+avatar+".png"+');"></div><div class="card"><div class="card-body"><h5 class="card-title chat-title">'+title+'</h5><p class="card-text chat-text">'+message+'</p></div></div></div><small class="currentDateTime">'+currentDateTime+'</small></div>');
+        $('.chat-box-container').prepend('<div class="row chat-box wow bounceInUp '+el_class+'"><div class="col-12"><div class="chat-image" style="background-image:url('+"../images/avatars/"+avatar+".png"+');"></div><div class="card"><div class="card-body"><h5 class="card-title chat-title">'+title+'</h5><p class="card-text chat-text">'+message+'</p></div></div></div><small class="currentDateTime">'+currentDateTime+'</small></div>');
     });
 }
 

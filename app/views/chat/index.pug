@@ -13,8 +13,8 @@ block content
             div(class="collapse navbar-collapse" id="navbarSupportedContent")
                 ul(class="navbar-nav mr-auto")
                     li(class="nav-item active")
-                        a(class="nav-link" href="logout") 
-                            i(class="fas fa-sign-out-alt") &nbsp;
+                        a(class="nav-link" href="logout")
+                            i(class="fa-solid fa-arrow-right-from-bracket") &nbsp;
                             | Logout
 
     div(class="chat")
@@ -45,10 +45,10 @@ block content
                     form(action="/chat/send" method="POST" class="chat-form")
                         div(class="row m-0 p-2")
                             div(class="col-10")
-                                textarea(placeholder="Message" name="message" class="form-control message")
+                                textarea(placeholder="Type your message..." name="message" class="form-control message")
                             div(class="col-2")
-                                button(type="submit" class="btn btn-info")
-                                    i(class="fas fa-paper-plane") 
+                                button(type="submit" class="btn btn-info" style="background-color:#3A8CF4;")
+                                    i(class="fa-regular fa-paper-plane") 
 
     audio(controls hidden id="chat-audio")
         source(src="audio/ringtone.mp3" type="audio/mpeg")
