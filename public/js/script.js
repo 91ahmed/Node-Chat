@@ -59,4 +59,22 @@ $(document).ready(function(){
 
     // Wow js init
     new WOW().init();
+
+    // Welcome message
+    $('.chat-box-container').delay(3000).prepend(`
+        <div class="row chat-box wow bounceInUp">
+            <div class="col-12">
+                <div class="chat-image" style="background-image:url(../images/avatars/boy_2.png);"></div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title chat-title"> Ahmed Hassan &nbsp;<small>(owner)</small></h5>
+                        <p class="card-text chat-text">
+                            You can use another device or browser to <b>simulates</b> the second user
+                        </p>  
+                    </div>
+                </div>
+            </div>
+            <small class="currentDateTime">1/20/2021, 3:56:19 AM</small>
+        </div>
+    `);
 });

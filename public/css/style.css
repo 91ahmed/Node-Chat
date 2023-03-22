@@ -237,7 +237,7 @@ textarea {
 .chat-content .card{
     border: 1px solid rgb(119 119 119 / 13%);
     border-radius: 10px;
-    max-width: 400px;
+    max-width: 280px;
     float: left;
 }
 .currentDateTime{
@@ -247,6 +247,24 @@ textarea {
     margin-bottom: 5px;
     margin-left: 77px;
     color: #959ba0; 
+}
+.typing-alert{
+    font-size: 12px;
+    font-style: italic;
+    padding: 7px 28px;
+    width: 100%;
+    color: #959ba0;
+}
+
+.side-overlay{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right:0;
+    width: 20px;
+    height: 100vh;
+   background-color: #F0F7FB;
+    z-index: 99999999;
 }
 
 

@@ -12,6 +12,9 @@ io.on('connection', (socket) => {
 	socket.on('chat-message', data => {
 		socket.broadcast.emit('send-data', data);
 	});
+	socket.on('typing-message', data => {
+		socket.broadcast.emit('typing-data', data);
+	});
 });
 
 const routes  = require('./routes/routes');
@@ -55,3 +58,9 @@ routes(app);
 server.listen(port, () => {
 	console.log('Server is running.. | Port: '+port)
 });
+
+
+//
+function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}

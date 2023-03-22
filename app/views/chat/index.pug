@@ -8,7 +8,8 @@ block content
                 div(class="user-avatar")
                 p(class="user-name")
             button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
-                span(class="navbar-toggler-icon")
+                i(class="lni lni-menu" style="color:#7a7979 !important;font-size: 19px;border:0 !important;")
+                // span(class="navbar-toggler-icon")
 
             div(class="collapse navbar-collapse" id="navbarSupportedContent")
                 ul(class="navbar-nav mr-auto")
@@ -20,6 +21,7 @@ block content
     div(class="chat")
         div(class="container p-0")
             div(class="chat-content")
+                div(class="side-overlay")
 
                 div(class="chat-box-container")
                     // Chat messages here
@@ -33,16 +35,18 @@ block content
                                             | (owner)
                                     p(class="card-text chat-text")
                                         | Hello!
-                                        span(class="welcome-user")
+                                        b
+                                            span(class="welcome-user")
                                         | &nbsp; ❤
                                         br
-                                        | welcome to my chat room
+                                        | welcome to my chat
                         small(class="currentDateTime")
                             | 1/20/2021, 3:56:19 AM
 
                 // Message Form
                 div(class="text-box")
                     form(action="/chat/send" method="POST" class="chat-form")
+                        div(class="typing-alert")
                         div(class="row m-0 p-2")
                             div(class="col-10")
                                 textarea(placeholder="Type your message..." name="message" class="form-control message")

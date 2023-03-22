@@ -43,17 +43,21 @@ $(function(){
 });
 
 $(function(){
+    $('.chat-form textarea').on('keypress', function (){
+        socket.emit('typing-message', {'typing':`${getCookie('name')} is typing..`}); 
+    });
+
+    $('.chat-form textarea').on('focusout', function (){
+        socket.emit('typing-message', {'typing':''}); 
+    });
+});
+
+$(function(){
     var imageUrl = 'images/avatars/'+getCookie('avatar')+'.png';
 
     $('.user-name').html('<b style="font-weight: 500;">Hello</b>, '+getCookie('name'));
     $('.welcome-user').html(" "+getCookie('name')+"");
     $('.user-avatar').css('background-image', 'url(' + imageUrl + ')');
-});
-
-socket.on('send-data', data => {
-    //getChatData();
-    prependMessage(data.avatar, data.name, data.message);
-    playChatRingtone();
 });
 
 function prependMessage (avatar, title, message, el_class = null)
@@ -73,3 +77,16 @@ function playChatRingtone() {
     var ringtone = document.getElementById('chat-audio');
     ringtone.play();
 }
+
+socket.on('send-data', data => {
+    prependMessage(data.avatar, data.name, data.message);
+    playChatRingtone();
+});
+
+socket.on('typing-data', data => {
+    if (data.typing == '') {
+        $('.typing-alert').html('')
+    } else {
+        $('.typing-alert').html(data.typing)
+    }
+});
