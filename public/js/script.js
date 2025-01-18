@@ -69,7 +69,7 @@ $(document).ready(function(){
                     <div class="card-body">
                         <h5 class="card-title chat-title"> Ahmed Hassan &nbsp;<small>(owner)</small></h5>
                         <p class="card-text chat-text">
-                            You can use another device or browser to <b>simulates</b> the second user
+                            You can use another device or browser to <b>simulate</b> the second user
                         </p>  
                     </div>
                 </div>
